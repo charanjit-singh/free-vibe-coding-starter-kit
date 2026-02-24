@@ -1,23 +1,11 @@
-# Indie Kit - The AI-Native Next.js Starter Kit
+# Vibe Mastery Starter Kit
 
-![Indie Kit](public/hero.png)
-
-<div align="center">
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Indie-Kit/nextjs-saas-starter)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Indie-Kit/nextjs-saas-starter)
-
-[![Star on GitHub](https://img.shields.io/github/stars/Indie-Kit/nextjs-saas-starter?style=social)](https://github.com/Indie-Kit/nextjs-saas-starter/stargazers)
-[![Get Pro Version](https://img.shields.io/badge/Get%20Pro%20Version-Indie%20Kit-blue?style=for-the-badge)](https://indiekit.pro/?utm_source=github-starter&utm_medium=readme&utm_campaign=lite)
-[![Join Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://indiekit.pro/app/discord)
-
-</div>
-
-# The AI-Native Next.js Starter Kit 🤖
 
 **Engineered for modern development. Optimized for AI.**
 
-This is the **Open Source / Lite Version** of [Indie Kit Pro](https://indiekit.pro/?utm_source=github-starter&utm_medium=readme&utm_campaign=lite). It combines a production-grade tech stack with **"AI Context Rules"** that empower LLMs (Cursor, Windsurf, Copilot) to understand your codebase, write bug-free code, and navigate your project autonomously.
+The **Vibe Mastery Starter Kit** comes with the **Vibe Mastery course** to help you bootstrap your projects. Use it to bootstrap any project—whether it's your first SaaS or your next side hustle. It combines a production-grade tech stack with **"AI Context Rules"** that empower LLMs (Cursor, Windsurf, Copilot) to understand your codebase, write bug-free code, and navigate your project autonomously.
+
+> **Bonus:** Not your first time? Check out [Indie Kit Pro](https://indiekit.pro/?utm_source=vibe-mastery&utm_medium=readme&utm_campaign=starter) for more features.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge)](https://nextjs.org/)
@@ -128,9 +116,9 @@ This kit is designed to be "read" by LLMs. It includes:
 - **Self-Correction**: Setup to help AI fix its own linting errors.
 - **Skills**: Specialized instructions for the AI to handle Auth, DB, and Payments correctly.
 
-## 💎 Indie Kit Pro vs Starter
+## 💎 Want More Features? Check Out Indie Kit Pro
 
-This starter is perfect for learning and building simple MVPs. For serious production apps, check out **[Indie Kit Pro](https://indiekit.pro/?utm_source=github-starter&utm_medium=readme&utm_campaign=table)**.
+This starter is perfect for learning and building simple MVPs with the Vibe Mastery course. For serious production apps with more features, check out **[Indie Kit Pro](https://indiekit.pro/?utm_source=vibe-mastery&utm_medium=readme&utm_campaign=table)**.
 
 | Feature                         | Starter (Free) | Indie Kit Pro |
 | :------------------------------ | :------------: | :-----------: |
