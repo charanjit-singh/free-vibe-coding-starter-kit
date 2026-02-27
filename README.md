@@ -20,7 +20,7 @@ The **Vibe Mastery Starter Kit** comes with the **Vibe Mastery course** to help 
 - 🔐 **Better Auth** (Social + Magic Link) - Secure and simple.
 - 🗄️ **Drizzle ORM** + **Bring Your Own Database** - Connect to **Supabase**, **Neon**, or any Postgres provider.
 - 💳 **Stripe** Subscription Webhooks - Ready for monetization.
-- 📁 **UploadThing** for file storage - Easy file uploads.
+- 📁 **Better Upload** for file storage - Upload directly to S3-compatible storage.
 - 🌙 **Dark Mode** built-in - Because developers love it.
 
 ### Pre-built Pages

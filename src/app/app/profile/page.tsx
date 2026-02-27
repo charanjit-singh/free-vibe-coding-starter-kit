@@ -24,7 +24,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { UploadButton } from "@/lib/uploadthing";
+import { useUploadFile } from "@better-upload/client";
+import { UploadButton } from "@/components/ui/upload-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const formSchema = z.object({
@@ -34,6 +35,42 @@ const formSchema = z.object({
 });
 
 type ProfileFormValues = z.infer<typeof formSchema>;
+
+function ProfileAvatarUpload({ mutate }: { mutate: () => void }) {
+  const { control } = useUploadFile({
+    route: "avatar",
+    onUploadComplete: async ({ metadata }) => {
+      const url = metadata?.url as string | undefined;
+      if (url) {
+        try {
+          const { error } = await authClient.updateUser({ image: url });
+          if (error) {
+            toast.error(error.message);
+          } else {
+            await mutate();
+            toast.success("Avatar updated");
+          }
+        } catch {
+          toast.error("Failed to update avatar");
+        }
+      }
+    },
+    onError: (error) => {
+      toast.error(`Error uploading: ${error.message}`);
+    },
+  });
+
+  return (
+    <div className="flex flex-col gap-2">
+      <UploadButton control={control} accept="image/*">
+        Upload avatar
+      </UploadButton>
+      <p className="text-xs text-muted-foreground">
+        Max file size: 2MB. Supported formats: JPG, PNG.
+      </p>
+    </div>
+  );
+}
 
 export default function ProfilePage() {
   const { user, mutate } = useUser();
@@ -68,8 +105,8 @@ export default function ProfilePage() {
 
       await mutate(); // Refresh user data
       toast.success("Profile updated successfully");
-    } catch (error: any) {
-      toast.error(error.message || "Failed to update profile");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to update profile");
     } finally {
       setIsSubmitting(false);
     }
@@ -99,35 +136,7 @@ export default function ProfilePage() {
               {user?.name ? getInitials(user.name) : "?"}
             </AvatarFallback>
           </Avatar>
-          <div className="flex flex-col gap-2">
-            <UploadButton
-              endpoint="imageUploader"
-              onClientUploadComplete={async (res) => {
-                const file = res?.[0];
-                if (file) {
-                  try {
-                    const { error } = await authClient.updateUser({
-                      image: file.url,
-                    });
-                    if (error) {
-                      toast.error(error.message);
-                    } else {
-                      await mutate();
-                      toast.success("Avatar updated");
-                    }
-                  } catch (e) {
-                    toast.error("Failed to update avatar");
-                  }
-                }
-              }}
-              onUploadError={(error: Error) => {
-                toast.error(`Error uploading: ${error.message}`);
-              }}
-            />
-            <p className="text-xs text-muted-foreground">
-              Max file size: 2MB. Supported formats: JPG, PNG.
-            </p>
-          </div>
+          <ProfileAvatarUpload mutate={mutate} />
         </CardContent>
       </Card>
 
